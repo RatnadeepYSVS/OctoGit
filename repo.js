@@ -39,6 +39,16 @@ const getData = async ()=>{
         imgdata.style.display='block'
         imgdata.style.margin='20px auto'
         Body.append(imgdata)
+        const h23 = document.createElement('h1')
+        h23.innerHTML=`CONTRIBUTIONS MADE`
+        h23.style.textAlign='center'
+        Body.append(h23)
+        const imgssdata = document.createElement('img')
+        imgssdata.src=`https://github-readme-streak-stats.herokuapp.com/?user=${user}&theme=nightowl`
+        imgssdata.style.width='50%'
+        imgssdata.style.display='block'
+        imgssdata.style.margin='20px auto'
+        Body.append(imgssdata)
         const h22 = document.createElement('h1')
         h22.innerHTML=`TOP LANGUAGE STATS`
         h22.style.textAlign='center'
