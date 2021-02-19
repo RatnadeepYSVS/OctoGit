@@ -1,4 +1,8 @@
 const user = localStorage.getItem('name')
+if(!user){
+    alert('Enter Valid Username.')
+    window.location.replace('https://octogit.vercel.app/')}
+else{
 let title = document.querySelector('title')
 let Body= document.body
 Body.style.backgroundColor='#1C2024'
@@ -8,7 +12,13 @@ url = 'https://api.github.com'
 const getData = async ()=>{
     const userdata = await fetch(`${url}/users/${user}`)
     const repodata = await userdata.json()
-        const pa = document.createElement('img')
+        console.log(repodata)
+        if(repodata.message==="Not Found"){
+            alert('Invalid User')
+            window.location.replace('https://octogit.vercel.app/')
+        }
+        else
+        {const pa = document.createElement('img')
         title.innerHTML=`OctoGit - ${user.trim()}.`
         pa.src=repodata.avatar_url
         pa.style.width='20%';
@@ -91,5 +101,5 @@ const getData = async ()=>{
             Body.append(divo)
         }
         arr()
-}
-getData()
+}}
+getData()}
